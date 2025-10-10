@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNITH University — Create your first Digital Human</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: radial-gradient(circle at center, #0033cc 0%, #000814 100%);
+      color: white;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    h1, h2, h3 { letter-spacing: 0.05em; }
+    footer { border-color: rgba(255,255,255,0.1); }
+
+  .card-dark{
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+  }
+  </style>
+
+  <!-- Microsoft speech recognition bundle -->
+  <script src="https://embedded.unith.ai/microsoft-speech-recognition.js"></script>
+
+  <!-- CSS & JS del bundle del widget -->
+  <link rel="stylesheet" href="https://embedded.unith.ai/dist/bundle.css" />
+  <script defer src="https://embedded.unith.ai/dist/bundle.js"></script>
+  
+</head>
+
+  <body class="min-h-screen text-white">
+
+  <!-- Top-right brandmark (link to home) -->
+  <a target="_blank" rel="noopener noreferrer" href="https://www.unith.ai/"
+  aria-label="Go to Home"
+  class="fixed top-4 right-4 z-50 block rounded-xl bg-white/10 border border-white/20 backdrop-blur px-2 py-2 hover:bg-white/20 transition">
+  <img src="../Unith-Brandmark-4.png"
+      alt="UNITH brandmark"
+      class="h-10 w-10 md:h-12 md:w-12 object-contain drop-shadow"
+      loading="eager"
+      decoding="async"
+      draggable="false">
+  </a>
+
+  <!-- === FIN MENÚ === -->
+   <!-- HERO -->
+<section class="w-full py-12">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <!-- Reemplazo del H1 por el wordmark -->
+    <div class="flex justify-center">
+      <picture>
+        <img
+          src="../Unith-Wordmark-2.png"
+          alt="UNITH"
+          class="h-12 md:h-14 w-auto mx-auto"
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
+    </div>
+
+    <!-- Subtítulo se mantiene igual -->
+    <h2 class="text-4xl md:text-5xl font-bold leading-tight text-blue-300 mt-3">
+      Cloning
+    </h2>
+
+    <p class="mt-4 text-lg text-slate-200">
+      Create <span class="font-semibold text-white">head visuals</span> and Digital Humans in minutes. A practical guide to uploading, processing, and validating your video for cloning.
+    </p>
+
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <a href="#create" class="px-6 py-3 rounded-2xl bg-white text-black font-medium hover:bg-slate-200">Create your own Clone</a>
+      <a href="https://app.unith.ai" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl border border-white/50 text-white font-medium hover:bg-white hover:text-black">UNITH interFace</a>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- MAIN SECTION -->
+  <section class="max-w-7xl mx-auto px-4 py-10 grid lg:grid-cols-[3fr_2fr] gap-8 items-start">
+    <!-- IZQUIERDA 60% -->
+    <div class="space-y-8">
+      <!-- VIDEO -->
+      <div class="rounded-3xl overflow-hidden shadow-xl card">
+        <div class="aspect-video">
+          <iframe
+            src="https://www.youtube.com/embed/KXYLP33R-xw"
+            title="YouTube video player"
+            class="w-full h-full"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+
+    <!-- TEORIA Y BUENAS PRÁCTICAS + Ejemplos-->
+    <div class="rounded-3xl shadow-sm card">
+      <div class="p-6 border-b border-white/10">
+        <h2 class="text-lg font-semibold text-blue-200">Theory & Best Practices</h2>
+      </div>
+      <div class="p-6 space-y-4 text-slate-200 leading-relaxed">
+
+       <!-- Quality matters notice -->
+        <div class="rounded-xl border border-yellow-300/30 bg-yellow-500/10 text-yellow-100 p-4 flex items-start gap-3">
+          <!-- icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 flex-none" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+          </svg>
+          <div>
+            <p class="font-semibold">Quality matters</p>
+            <p class="text-sm opacity-90">
+              The fidelity of your clone depends heavily on the source video quality. Use a sharp, well-lit, front-facing shot with a neutral background and minimal noise.
+            </p>
+            <p class="text-sm mt-2">
+              For more tips on recording the best possible video, download our guide:
+              <br><a href="CLONE GUIDE DIGITAL HUMAN_EN.pdf"
+                target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-3 py-1.5 ml-1 rounded-lg bg-yellow-300/20 hover:bg-yellow-300/30 border border-yellow-300/30 text-yellow-50">
+                <span>Open Recording Guide (PDF)</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M14 3h7m0 0v7m0-7L10 14"/>
+                </svg>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <p><strong>Recording:</strong> Stable front-facing camera, even lighting, neutral background. Avoid harsh shadows and noise.</p>
+        <p><strong>Input:</strong> Video in MP4/H.264, 10s looking at the camera, 16:9 HD (1280x720p) at 25fps or 1080p.</p>
+        <p><strong>Process:</strong> Obtain your Bearer Token → Generate → Validate result → Iterate.</p>
+        <p><strong>Ethics & Legal:</strong> Always obtain and store explicit consent from the individual whose image is being cloned.</p>
+
+        <video 
+          src="Hal_Idle_OfficeBG_v.2_5.0'.mp4" 
+          autoplay 
+          loop 
+          muted 
+          playsinline 
+          class="w-full rounded-xl mb-4 shadow-lg">
+          Tu navegador no soporta video HTML5.
+        </video>
+
+      </div>
+    </div>
+
+
+    <!-- Obtain Bearer Token (COLLAPSED) -->
+    <details class="rounded-3xl shadow-sm card">
+      <summary class="list-none p-6 flex items-center justify-between cursor-pointer select-none border-b border-white/10">
+        <h2 class="text-lg font-semibold text-blue-200">Obtain your Bearer Token</h2>
+        <!-- chevron (rota si ya usas .chev en tu CSS) -->
+        <svg class="chev h-5 w-5 opacity-80" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </summary>
+
+      <div class="p-6 space-y-4 text-slate-200 leading-relaxed">
+        <!-- Secret Key -->
+        <h3 class="text-lg font-semibold text-black-200 mt-8">Get your Secret Key:</h3>
+        <ol class="list-decimal pl-6 space-y-4">
+          <li><strong>Open UNITH interface:</strong> Click your name in the top-right corner.</li>
+          <li><strong>Manage Account:</strong> Select <em>"Manage Account"</em> from the dropdown.</li>
+          <img src="getSecretKey.png" alt="Get Secret Key example" class="w-full rounded-xl shadow-lg mb-4">
+          <li><strong>Generate secret key:</strong> Click <em>"Generate Secret Key"</em>. Copy the key immediately, you will not be able to view it again.</li>
+          <li><strong>Store securely:</strong> Save the Secret Key in a secrets manager or environment variable (do not embed it in client-side code or commit it to source control).</li>
+          <img src="GenerateSecretKey.png" alt="Generate Secret Key example" class="w-full rounded-xl shadow-lg mb-4">
+        </ol>
+
+        <!-- Bearer -->
+        <h3 class="text-lg font-semibold text-black-200 mt-8">Get your Bearer Token:</h3>
+        <ol class="list-decimal pl-6 space-y-4">
+          <li><strong>Open Your Terminal:</strong> Launch your terminal or command line interface on your machine.</li>
+          <li>
+            <strong>Run the following command:</strong> Use your Email and Secret Key.
+            <!-- Copiable code block -->
+            <div class="relative bg-black text-green-400 font-mono text-sm rounded-xl shadow-lg p-4 mt-2">
+              <button onclick="copyBearerCommand()" 
+                      class="absolute top-2 right-2 bg-slate-800 hover:bg-slate-700 text-white text-xs px-3 py-1 rounded">
+                Copy
+              </button>
+    <pre><code>curl -X 'POST' \
+    'https://platform-api.unith.ai/auth/token' \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "email": "YOUR_EMAIL",
+    "secretKey": "YOUR_UNITH_SECRET_KEY"
+    }'</code></pre>
+            </div>
+          </li>
+          <li>This will return <strong>Your Bearer Token</strong> (valid for 7 days)</li>
+        </ol>
+
+        <script>
+          function copyBearerCommand() {
+            const code = `curl -X 'POST' \\
+    'https://platform-api.unith.ai/auth/token' \\
+    -H 'accept: application/json' \\
+    -H 'Content-Type: application/json' \\
+    -d '{
+    "email": "YOUR_EMAIL",
+    "secretKey": "YOUR_UNITH_SECRET_KEY"
+    }'`;
+            navigator.clipboard.writeText(code).then(() => {
+              alert("Command copied to clipboard!");
+            });
+          }
+        </script>
+      </div>
+    </details>
+
+
+      <!-- EMBED TOOL -->
+      <div id="create" class="rounded-3xl overflow-hidden shadow-sm card mt-8">
+        <iframe
+          src="https://plugins.tools.unith.ai/head-visual-create"
+          title="UNITH Head Visual Create"
+          class="w-full h-[1380px]"
+          allow="clipboard-read; clipboard-write; camera; microphone; fullscreen;"
+          referrerpolicy="no-referrer">
+        </iframe>
+      </div>
+
+
+
+          <!-- AFTER UPLOAD (ALWAYS VISIBLE) -->
+<div class="rounded-3xl shadow-sm card mt-8">
+  <div class="p-6 border-b border-white/10">
+    <h2 class="text-lg font-semibold text-blue-200">After you upload your Head Visual</h2>
+  </div>
+  <div class="p-6 space-y-3 text-slate-200 leading-relaxed">
+    <p>
+      Once the processing is complete and your head visual is uploaded, it will be
+      available in your account. Open
+      <a href="https://app.unith.ai/" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+        UNITH interFace
+      </a>
+      and create a new <strong>Digital Human</strong>.
+    </p>
+    <p>
+      You’ll find the head visual in your <strong>Library</strong>, click in interFace to start using it right away.
+    </p>
+    <div class="pt-2">
+      <a href="https://app.unith.ai/" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white text-black font-medium hover:bg-slate-200 transition">
+        Go to UNITH interFace
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M14 3h7m0 0v7m0-7L10 14"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+    </div>
+
+
+
+
+    <!-- DERECHA 40% -->
+    <div class="lg:sticky lg:top-6 lg:h-[100svh] h-auto">
+      <div class="rounded-3xl overflow-hidden shadow-xl p-4 card h-full flex flex-col">
+        <h2 class="text-xl font-semibold mb-4 text-blue-200">Noa - Digital Human Specialist</h2>
+
+        <!-- 👇 Contenedor real del humano (mismo DOM, no iframe) -->
+        <div
+          id="talking-head"
+          data-api_base="https://chat-origin.api.unith.live"
+          data-api_key="34efd4bac0624a2ab8f362efd7b3744d"
+          data-org_id="UNITH-760"
+          data-head_id="noa-19213"
+          data-theme="demo"
+          data-vm_version="1"
+          data-time_pressure="false"
+          data-subs_enabled="true"
+          data-mic_enabled="true"
+          data-widget_mode="false"
+          data-embed="true"
+          style="width:100%; height:100%; margin:0;"
+        ></div>
+      </div>
+    </div>
+
+
+  </section>
+
+
+
+  <!-- FAQ -->
+<section id="faq" class="max-w-7xl mx-auto px-4 py-10">
+  <h3 class="text-xl font-semibold mb-4 text-blue-200">Frequently Asked Questions</h3>
+
+  <div class="space-y-6 text-slate-200 text-sm">
+
+    <!-- Docs / More info -->
+    <div class="rounded-2xl p-5 card">
+      <p class="font-medium text-white">Where can I find more information about cloning?</p>
+      <p class="mt-1">
+        You can access our full documentation here:
+        <a href="https://docs.unith.ai/" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+          https://docs.unith.ai/
+        </a>
+      </p>
+      <ul class="list-disc pl-6 mt-3 space-y-1">
+        <li>
+          <a href="https://docs.unith.ai/creating-head-visuals" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+            Creating Head Visuals
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.unith.ai/video-guidelines-for-avatar-creation" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+            Video Guidelines for Avatar Creation
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.unith.ai/expressive-digital-humans" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+            Expressive Digital Humans
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.unith.ai/changing-digital-human-backgrounds" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+            Changing Digital Human Backgrounds
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.unith.ai/audio-cloning" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+            Audio Cloning
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Default vs Two Loops -->
+    <div class="rounded-2xl p-5 card">
+      <p class="font-medium text-white">What’s the difference between <em>Default mode</em> and <em>Two Loops</em>?</p>
+      <p class="mt-1">
+        <strong>Default mode</strong> focuses on speed and standard-quality results using a single pass over your video. It creates only one idle animation loop.
+        <br>For greater expressiveness, we’ve introduced <strong>Two Loops</strong>. it defines two states:
+        one for idle (when silent), and another for talking. <br>
+        This gives your head visuals more dynamism and realism.
+        You upload one video as usual, but define the exact transition point between idle and talking using the cut timestamp parameter.
+      </p>
+    </div>
+
+    <!-- Animals -->
+    <div class="rounded-2xl p-5 card">
+      <p class="font-medium text-white">Can I clone an animal?</p>
+      <p class="mt-1">
+        No. Our model is trained to recognize <strong>human faces</strong>. You can try, but the output will likely not be accurate
+        or usable for animal faces.
+      </p>
+    </div>
+
+    <!-- Minimum quality -->
+    <div class="rounded-2xl p-5 card">
+      <p class="font-medium text-white">Is there a minimum quality required?</p>
+      <p class="mt-1">
+        Yes. If the input doesn’t meet the minimum quality, facial features may not be detected correctly and the process can fail.
+        Aim for:
+      </p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Resolution: <strong>720p or 1080p</strong></li>
+        <li>Duration: <strong>10 seconds maximum</strong>, looking at the camera</li>
+        <li>Lighting: <strong>even, front-facing</strong> light; avoid harsh shadows</li>
+        <li>Background: <strong>clean/neutral</strong>; minimal noise and movement</li>
+        <li>Framing: <strong>stable</strong>, head centered, 16:9 aspect ratio</li>
+      </ul>
+    </div>
+
+    <!-- Most important factors -->
+    <div class="rounded-2xl p-5 card">
+      <p class="font-medium text-white">What’s most important to make it work well?</p>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li><strong>Quality</strong>: sharp focus and consistent lighting.</li>
+        <li><strong>Size</strong>: sufficient resolution (720p+).</li>
+        <li><strong>Movement</strong>: avoid sudden or fast head movements.</li>
+      </ul>
+    </div>
+
+
+
+<!-- Support / Contact -->
+<div class="rounded-2xl p-5 card">
+  <p class="font-medium text-white">Still need help?</p>
+  <p class="mt-1">
+    Reach our support team at
+    <a href="mailto:support@unith.ai" class="underline hover:no-underline">
+      support@unith.ai
+    </a>.
+  </p>
+  <div class="mt-3">
+    <a href="mailto:support@unith.ai"
+       class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-white text-black font-medium hover:bg-slate-200 transition">
+      Contact Support
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M14 3h7m0 0v7m0-7L10 14"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+</div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer class="border-t py-10 text-sm text-slate-300">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8 justify-between">
+      <div>
+        <div class="font-semibold text-white">UNITH University</div>
+        <div class="text-slate-400">Cloning • Head Visuals • Digital Human</div>
+      </div>
+      <div class="flex gap-6">
+        <a class="hover:underline" href="#faq">FAQ</a>
+        <a target="_blank" rel="noopener noreferrer" class="hover:underline" href="https://www.unith.ai/">UNITH</a>
+        <a target="_blank" rel="noopener noreferrer" class="hover:underline" href="https://www.unith.ai/pricing">Pricing</a>
+        <a class="hover:underline" href="#create">Create</a>
+      </div>
+      <div>© 2025 Unith. All rights reserved.</div>
+    </div>
+  </footer>
+
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // Overlay invisible a pantalla completa (primer gesto del usuario)
+      const overlay = document.createElement('button');
+      Object.assign(overlay.style, {
+        position: 'fixed', inset: '0',
+        width: '100vw', height: '100vh',
+        zIndex: '10000', opacity: '0',
+        border: 'none', background: 'transparent', cursor: 'pointer'
+      });
+      document.body.appendChild(overlay);
+  
+      // Mantiene el scroll en su sitio (evita que te “baje” al humano)
+      function preserveScroll() {
+        const x = window.scrollX, y = window.scrollY;
+        const prev = document.documentElement.style.scrollBehavior || '';
+        document.documentElement.style.scrollBehavior = 'auto';
+        [0, 120, 360, 800].forEach(t => setTimeout(() => window.scrollTo(x, y), t));
+        setTimeout(() => { document.documentElement.style.scrollBehavior = prev; }, 900);
+      }
+  
+      const kick = () => {
+        overlay.remove();
+  
+        const tryKick = () => {
+          const btn =
+            document.querySelector('#touch_to_start') ||
+            document.querySelector('[data-testid="lets-chat"]') ||
+            document.querySelector('.lets-chat') ||
+            document.querySelector('button#lets-chat');
+  
+          if (btn) {
+            // Importante: NO hacer focus() para que no provoque scroll
+            btn.click();
+            preserveScroll();
+            console.log('✅ Digital Human started without scrolling to it.');
+          } else {
+            setTimeout(tryKick, 350);
+          }
+        };
+  
+        tryKick();
+      };
+  
+      overlay.addEventListener('click', kick, { once: true });
+      // por si el primer gesto es touch/teclado
+      window.addEventListener('touchstart', kick, { once: true, capture: true });
+      window.addEventListener('keydown',    kick, { once: true, capture: true });
+    });
+  </script>
+  
+  
+  
+  
+</body>
+</html>
